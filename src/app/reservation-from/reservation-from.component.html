@@ -1,0 +1,28 @@
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Check-In-Date</label>
+        <input type="date" formControlName="CheckInDate">
+        <div *ngIf="reservationForm.get('checkInDate')?.invalid && reservationForm.get('checkInDate')?.touched">Check-In-Date is requrired.</div>
+    </div>
+    <div>
+        <label>Check-out-Date</label>
+        <input type="date" formControlName="CheckOutDate">
+        <div *ngIf="reservationForm.get('checkOutDate')?.invalid && reservationForm.get('checkOutDate')?.touched">Check-Out-Date is requrired.</div>
+    </div>
+    <div>
+        <label>guestName </label>
+        <input type="text" formControlName="guestName">
+        <div *ngIf="reservationForm.get('guestName')?.invalid && reservationForm.get('guestName')?.touched">GuessName is requrired.</div>
+    </div> 
+    <div>
+        <label>guestEmail </label>
+        <input type="email" formControlName="guestEmail">
+        <div *ngIf="reservationForm.get('guestEmail')?.invalid && reservationForm.get('guestEmail')?.touched">GuessEmail is requrired.</div>
+    </div>
+    <div>
+        <label>Room Number</label>
+        <input type="number" formControlName="roomNumber">
+        <div *ngIf="reservationForm.get('roomNumber')?.invalid && reservationForm.get('roomNumber')?.touched">RoomNumber is requrired.</div>
+    </div>
+    <button type="submit" >Submit</button>
+</form>
